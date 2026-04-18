@@ -19,26 +19,20 @@ def push_batch(batch_files, batch_num):
     # 打印当前批次的文件
     print(f"Files in batch {batch_num}: {batch_files}")
     
-    # 先添加所有文件
-    add_cmd = 'git add .'
-    print(f"Running: {add_cmd}")
-    add_code, add_out, add_err = run_git_command(add_cmd)
-    if add_code != 0:
-        print(f"Batch {batch_num} Git add failed: {add_err}")
-        return False
-    else:
-        print(f"Batch {batch_num} Git add succeeded")
-    
     # 检查 Git 状态
     status_code, status_out, status_err = run_git_command('git status')
     print(f"Git status: {status_out}")
     
-    # Git commit
+    # 尝试提交
     commit_cmd = f'git commit -m "Add batch {batch_num} of error code files"'
     print(f"Running: {commit_cmd}")
     commit_code, commit_out, commit_err = run_git_command(commit_cmd)
     if commit_code != 0:
         print(f"Batch {batch_num} Git commit failed: {commit_err}")
+        # 如果是因为没有新文件，跳过
+        if "nothing to commit" in commit_err:
+            print("No new files to commit, skipping...")
+            return True
         return False
     else:
         print(f"Batch {batch_num} Git commit succeeded: {commit_out}")
