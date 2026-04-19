@@ -23,8 +23,18 @@ def push_batch(batch_files, batch_num):
     status_code, status_out, status_err = run_git_command('git status')
     print(f"Git status: {status_out}")
     
+    # 先添加所有修改的文件
+    add_cmd = 'git add .'
+    print(f"Running: {add_cmd}")
+    add_code, add_out, add_err = run_git_command(add_cmd)
+    if add_code != 0:
+        print(f"Batch {batch_num} Git add failed: {add_err}")
+        return False
+    else:
+        print(f"Batch {batch_num} Git add succeeded")
+    
     # 尝试提交
-    commit_cmd = f'git commit -m "Add batch {batch_num} of error code files"'
+    commit_cmd = f'git commit -m "Update error code files and fix Colab links"'
     print(f"Running: {commit_cmd}")
     commit_code, commit_out, commit_err = run_git_command(commit_cmd)
     if commit_code != 0:

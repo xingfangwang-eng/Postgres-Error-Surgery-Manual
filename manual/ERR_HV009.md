@@ -1,4 +1,4 @@
-# [错误代码] : HV009 [错误名称] : fdw_invalid_use_of_null_pointer 深度解析与排查方案
+# Error HV009: fdw_invalid_use_of_null_pointer - Analysis and Solution
 
 ## 现象描述
 
@@ -13,7 +13,7 @@
 
 这种错误往往涉及到复杂的数据库配置或模式问题。你可以使用我们的免费在线手术室进行快速诊断：
 
-![Colab Badge](https://colab.research.google.com/assets/colab-badge.svg)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1InhuP66xl3VIRYOpRlvQXBCsvig0i3x4)
 
 ## 自动化修复建议
 

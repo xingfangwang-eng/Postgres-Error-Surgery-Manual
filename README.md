@@ -7,7 +7,7 @@
 
 | 工具 | 链接 |
 |------|------|
-| 在线诊断 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/) |
+| 在线诊断 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1InhuP66xl3VIRYOpRlvQXBCsvig0i3x4) |
 | 一键修复 | [Postgres Surgeon](https://postgressurgeon.wangdadi.xyz) |
 
 ## 错误代码索引

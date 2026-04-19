@@ -20,7 +20,7 @@ for error in errors:
     filepath = os.path.join(output_dir, filename)
     
     # 生成文件内容
-    content = f"""# [错误代码] : {error_code} [错误名称] : {error_name} 深度解析与排查方案
+    content = f"""# Error {error_code}: {error_name} - Analysis and Solution
 
 ## 现象描述
 
